@@ -1,0 +1,50 @@
+class Mahasiswa:
+    def __init__(self, nim, prodi, angkatan):
+        self.__nim = nim             # Private attribute
+        self.__prodi = prodi         # Private attribute
+        self.angkatan = angkatan     # Public attribute
+
+    def get_nim(self):
+        return self.__nim
+
+    def set_nim(self, new_nim):
+        self.__nim = new_nim
+
+    def get_prodi(self):
+        return self.__prodi
+
+    def set_prodi(self, new_prodi):
+        self.__prodi = new_prodi
+
+    def mengikuti_pmb(self):
+        print(f"Mahasiswa prodi PTI angkatan {self.angkatan} sedang mengikuti PMB.")
+
+    def mengisi_absensi(self):
+        print(f"Mahasiswa prodi {self.__prodi} telah mengisi absensi kehadiran.")
+
+    def presentasi_tugas(self):
+        print(f"Mahasiswa dengan NIM {self.__nim} sedang melakukan presentasi tugas.")
+
+mahasiswa1 = Mahasiswa("A12345678", "Teknik Informatika", 2024)
+mahasiswa1.mengikuti_pmb()
+mahasiswa1.mengisi_absensi()
+
+mahasiswa2 = Mahasiswa("E87654321", "Sistem Informasi", 2023)
+mahasiswa2.presentasi_tugas()
+
+mahasiswa_baru = Mahasiswa("A510140080", "Ilmu Tanah", 2014)
+
+print("\n=== Sebelum diubah ===")
+print("NIM Mahasiswa Baru:", mahasiswa_baru.get_nim())
+print("Prodi Mahasiswa Baru:", mahasiswa_baru.get_prodi())
+
+mahasiswa_baru.set_nim("A710240099")
+mahasiswa_baru.set_prodi("Kedokteran Hewan")
+
+print("\n=== Setelah diubah ===")
+print("NIM setelah diubah:", mahasiswa_baru.get_nim())
+print("Prodi setelah diubah:", mahasiswa_baru.get_prodi())
+
+mahasiswa_baru.mengikuti_pmb()
+mahasiswa_baru.mengisi_absensi()
+mahasiswa_baru.presentasi_tugas()
